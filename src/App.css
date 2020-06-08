@@ -1,0 +1,234 @@
+.App {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+body {
+    background: #fafafa;
+}
+
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebar {
+  min-width: 260px;
+  max-width: 260px;
+  color: #fff;
+  margin-left: -260px;
+  transition: all 0.5s;
+  box-shadow : 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)
+}
+
+.sidebar.is-open {
+  margin-left: 0;
+  transition: .5s;
+}
+
+
+.sidebar-header {
+  background: #212d3a;
+}
+
+.sidebar-header h3{
+  color: #fff;
+  padding: 1em;
+}
+
+.sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+.menu-open {
+  background: #212d3a;
+}
+
+.nav-item {
+  margin : 0px 5px 0px 15px;
+  padding: 5px 0px;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.activeLink {
+  color: white;
+  background: #00acc1;
+  border-radius: 4px;
+}
+
+.items-menu {
+  color: #fff;
+  background: #212d3a;
+}
+
+li a.dropdown-toggle::after {
+    display: inline-flex;
+    position: relative;
+    left: 60%;
+    top: 10%
+}
+
+.sidebar-header > span {
+    position: relative;
+    float: right;
+    margin: .5em;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+.side-menu {
+  overflow-y: scroll;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(
+    rgba(2, 0, 0, 0.82), rgba(0, 0, 0, 0.8)
+  ),url(./assets/sidebar.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  z-index: 1;
+}
+
+.navItems{
+  font-weight: 100;
+  font-family: 'roboto';
+}
+
+.MuiBadge-badge.MuiBadge-anchorOriginTopRightRectangle.MuiBadge-colorSecondary{
+  font-weight: 100 !important;
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background: #4a4e5f; 
+  border-radius: 3px;
+}
+
+.side-menu::-webkit-scrollbar-thumb:hover {
+  background: #4f5054; 
+}
+
+.side-menu-label{
+  font-weight: 200;
+  text-align: center;
+  padding: 30px 0px;
+  font-size: 22px;
+  margin: 0px 5px 15px 15px;
+  border-bottom: 1px solid #757471;
+}
+
+.nav-link{
+  font-size: 15px;
+  padding: 0.9em 0.9em;
+}
+
+.labelClass{
+  font-weight: 100;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+.content {
+  padding: 10px 20px 20px 20px;
+  margin-left: 0;
+}
+
+.navBarContent{
+  padding: 10px 0px 30px 0px;
+}
+
+.headerBar{
+  display: flex;
+  width: 100%;
+  z-index: 10;
+}
+
+.headerBar .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input{
+  font-weight: 100;
+  font-size: 14px;
+  padding-left: 7px;
+}
+
+.headerBar .MuiInput-underline:after{
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "\00a0";
+  position: absolute;
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid #cccccc;
+  pointer-events: none;
+}
+
+.headerBar .MuiInput-underline:hover:not(.Mui-disabled):before{
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "\00a0";
+  position: absolute;
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid #cccccc;
+  pointer-events: none;
+}
+.headerBar .MuiSelect-select:focus{
+  background: transparent;
+}
+
+.headerLabel{
+  font-weight: 100;
+  padding-left: 15px;
+  font-size: 22px;
+}
+
+.MuiMenuItem-root{
+  font-weight: 100 !important;
+  min-width: 110px !important;
+}
+
+.MuiPopover-paper{
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+      overflow:  hidden;
+    }
+
+    .content.is-open {
+      margin-left: 100%;
+    }
+
+    .sidebar.is-open {
+      min-width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      transition: all 0.5s, height 0s;
+    }
+
+    .sidebar.is-open > .sidebar-header span{
+      display: unset;
+    }
+
+    li a.dropdown-toggle::after {
+        display: inline-block;
+        position: relative;
+        left: 68%;
+    }
+}
