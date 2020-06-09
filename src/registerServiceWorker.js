@@ -51,7 +51,7 @@ export default function register() {
     });
   }
 }
-
+//registerValidSW
 function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
